@@ -15,7 +15,7 @@
 *.log
 [Dd]ebug*/
 *.sbr
-obj/
+*/obj/*
 [Rr]elease*/
 _ReSharper*/
 *.pdb
