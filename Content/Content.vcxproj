@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{3CA235C0-1D71-4285-8A6C-7CDA585F206A}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Content</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
+    <TargetName>$(ProjectName)</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <OutDir>bin\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;CONTENT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <ProgramDataBaseFileName>$(IntDir)content_.pdb</ProgramDataBaseFileName>
+      <AdditionalIncludeDirectories>C:\_dev\openFrameworks\libs\openFrameworks\;C:\_dev\openFrameworks\libs\openFrameworks\3d;C:\_dev\openFrameworks\libs\openFrameworks\app;C:\_dev\openFrameworks\libs\openFrameworks\communication;C:\_dev\openFrameworks\libs\openFrameworks\events;C:\_dev\openFrameworks\libs\openFrameworks\gl;C:\_dev\openFrameworks\libs\openFrameworks\gl\shaders;C:\_dev\openFrameworks\libs\openFrameworks\graphics;C:\_dev\openFrameworks\libs\openFrameworks\math;C:\_dev\openFrameworks\libs\openFrameworks\sound;C:\_dev\openFrameworks\libs\openFrameworks\types;C:\_dev\openFrameworks\libs\openFrameworks\utils;C:\_dev\openFrameworks\libs\openFrameworks\video;C:\_dev\openFrameworks\libs\glew\include;C:\_dev\openFrameworks\libs\boost\include;C:\_dev\openFrameworks\libs\cairo\include\cairo;C:\_dev\openFrameworks\libs\curl\include;C:\_dev\openFrameworks\libs\fmodex\include;C:\_dev\openFrameworks\libs\FreeImage\include;C:\_dev\openFrameworks\libs\freetype\include;C:\_dev\openFrameworks\libs\glfw\include;C:\_dev\openFrameworks\libs\glm\include;C:\_dev\openFrameworks\libs\json\include;C:\_dev\openFrameworks\libs\libpng;C:\_dev\openFrameworks\libs\openssl\include;C:\_dev\openFrameworks\libs\pixman;C:\_dev\openFrameworks\libs\pugixml\include;C:\_dev\openFrameworks\libs\rtAudio\include;C:\_dev\openFrameworks\libs\tess2\include;C:\_dev\openFrameworks\libs\uriparser\include;C:\_dev\openFrameworks\libs\utf8\include;C:\_dev\openFrameworks\libs\videoInput\include;C:\_dev\openFrameworks\libs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff")).pdb</ProgramDatabaseFile>
+      <AdditionalLibraryDirectories>C:\_dev\openFrameworks\libs\openFrameworksCompiled\lib\vs\Win32;C:\_dev\openFrameworks\libs\boost\lib\vs\Win32;C:\_dev\openFrameworks\libs\cairo\lib\vs\Win32;C:\_dev\openFrameworks\libs\curl\lib\vs\Win32;C:\_dev\openFrameworks\libs\fmodex\lib\vs\Win32;C:\_dev\openFrameworks\libs\FreeImage\lib\vs\Win32;C:\_dev\openFrameworks\libs\freetype\lib\vs\Win32;C:\_dev\openFrameworks\libs\glew\lib\vs\Win32;C:\_dev\openFrameworks\libs\glfw\lib\vs\Win32;C:\_dev\openFrameworks\libs\openssl\lib\vs\Win32;C:\_dev\openFrameworks\libs\pugixml\lib\vs\Win32;C:\_dev\openFrameworks\libs\rtAudio\lib\vs\Win32;C:\_dev\openFrameworks\libs\uriparser\lib\vs\Win32;C:\_dev\openFrameworks\libs\videoInput\lib\vs\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>openFrameworksLib_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>del "..\Application\bin\*.pdb" 
+xcopy /Y "$(OutDir)*.*" "..\Application\bin"</Command>
+    </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>del "$(OutDir)*.pdb"</Command>
+    </PreBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;CONTENT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/Fd "content_%date:~-4,4%%date:~-10,2%%date:~-7,2%_%time:~0,2%%time:~3,2%%time:~6,2%.pdb" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;CONTENT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <ProgramDataBaseFileName>$(IntDir)content_.pdb</ProgramDataBaseFileName>
+      <AdditionalIncludeDirectories>C:\_dev\openFrameworks\libs\openFrameworks\;C:\_dev\openFrameworks\libs\openFrameworks\3d;C:\_dev\openFrameworks\libs\openFrameworks\app;C:\_dev\openFrameworks\libs\openFrameworks\communication;C:\_dev\openFrameworks\libs\openFrameworks\events;C:\_dev\openFrameworks\libs\openFrameworks\gl;C:\_dev\openFrameworks\libs\openFrameworks\gl\shaders;C:\_dev\openFrameworks\libs\openFrameworks\graphics;C:\_dev\openFrameworks\libs\openFrameworks\math;C:\_dev\openFrameworks\libs\openFrameworks\sound;C:\_dev\openFrameworks\libs\openFrameworks\types;C:\_dev\openFrameworks\libs\openFrameworks\utils;C:\_dev\openFrameworks\libs\openFrameworks\video;C:\_dev\openFrameworks\libs\glew\include;C:\_dev\openFrameworks\libs\boost\include;C:\_dev\openFrameworks\libs\cairo\include\cairo;C:\_dev\openFrameworks\libs\curl\include;C:\_dev\openFrameworks\libs\fmodex\include;C:\_dev\openFrameworks\libs\FreeImage\include;C:\_dev\openFrameworks\libs\freetype\include;C:\_dev\openFrameworks\libs\glfw\include;C:\_dev\openFrameworks\libs\glm\include;C:\_dev\openFrameworks\libs\json\include;C:\_dev\openFrameworks\libs\libpng;C:\_dev\openFrameworks\libs\openssl\include;C:\_dev\openFrameworks\libs\pixman;C:\_dev\openFrameworks\libs\pugixml\include;C:\_dev\openFrameworks\libs\rtAudio\include;C:\_dev\openFrameworks\libs\tess2\include;C:\_dev\openFrameworks\libs\uriparser\include;C:\_dev\openFrameworks\libs\utf8\include;C:\_dev\openFrameworks\libs\videoInput\include;C:\_dev\openFrameworks\libs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff")).pdb</ProgramDatabaseFile>
+      <AdditionalLibraryDirectories>C:\_dev\openFrameworks\libs\openFrameworksCompiled\lib\vs\Win32;C:\_dev\openFrameworks\libs\boost\lib\vs\Win32;C:\_dev\openFrameworks\libs\cairo\lib\vs\Win32;C:\_dev\openFrameworks\libs\curl\lib\vs\Win32;C:\_dev\openFrameworks\libs\fmodex\lib\vs\Win32;C:\_dev\openFrameworks\libs\FreeImage\lib\vs\Win32;C:\_dev\openFrameworks\libs\freetype\lib\vs\Win32;C:\_dev\openFrameworks\libs\glew\lib\vs\Win32;C:\_dev\openFrameworks\libs\glfw\lib\vs\Win32;C:\_dev\openFrameworks\libs\openssl\lib\vs\Win32;C:\_dev\openFrameworks\libs\pugixml\lib\vs\Win32;C:\_dev\openFrameworks\libs\rtAudio\lib\vs\Win32;C:\_dev\openFrameworks\libs\uriparser\lib\vs\Win32;C:\_dev\openFrameworks\libs\videoInput\lib\vs\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>openFrameworksLib.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+    <PostBuildEvent>
+      <Command>xcopy /Y "$(OutDir)*.*" "..\Application\bin"</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;CONTENT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalOptions>/Fd "content_%date:~-4,4%%date:~-10,2%%date:~-7,2%_%time:~0,2%%time:~3,2%%time:~6,2%.pdb" %(AdditionalOptions)</AdditionalOptions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="Content.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Content.cpp" />
+    <ClCompile Include="dllmain.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
