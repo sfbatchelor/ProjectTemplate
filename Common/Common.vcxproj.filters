@@ -15,19 +15,8 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Content.h">
+    <ClInclude Include="Filewatcher.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ShaderWatcher.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Content.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="ShaderWatcher.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

@@ -72,9 +72,9 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IntDir>obj\$(Configuration)\</IntDir>
+    <IntDir>obj\$(Configuration)\$([System.DateTime]::Now.toString("MMddhhmmssfff"))\</IntDir>
     <OutDir>bin\$(Configuration)\</OutDir>
-    <TargetName>$(ProjectName)</TargetName>
+    <TargetName>$(ProjectName)_debug</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -83,8 +83,8 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
-    <IntDir>obj\$(Configuration)\</IntDir>
-    <OutDir>bin\</OutDir>
+    <IntDir>obj\$(Configuration)\$([System.DateTime]::Now.toString("MMddhhmmssfff"))\</IntDir>
+    <OutDir>bin\$(Configuration)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
@@ -102,8 +102,7 @@
       <AdditionalOptions>
       </AdditionalOptions>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff")).pdb</ProgramDataBaseFileName>
-      <AdditionalIncludeDirectories>C:\_dev\openFrameworks\libs\openFrameworks\;C:\_dev\openFrameworks\libs\openFrameworks\3d;C:\_dev\openFrameworks\libs\openFrameworks\app;C:\_dev\openFrameworks\libs\openFrameworks\communication;C:\_dev\openFrameworks\libs\openFrameworks\events;C:\_dev\openFrameworks\libs\openFrameworks\gl;C:\_dev\openFrameworks\libs\openFrameworks\gl\shaders;C:\_dev\openFrameworks\libs\openFrameworks\graphics;C:\_dev\openFrameworks\libs\openFrameworks\math;C:\_dev\openFrameworks\libs\openFrameworks\sound;C:\_dev\openFrameworks\libs\openFrameworks\types;C:\_dev\openFrameworks\libs\openFrameworks\utils;C:\_dev\openFrameworks\libs\openFrameworks\video;C:\_dev\openFrameworks\libs\glew\include;C:\_dev\openFrameworks\libs\boost\include;C:\_dev\openFrameworks\libs\cairo\include\cairo;C:\_dev\openFrameworks\libs\curl\include;C:\_dev\openFrameworks\libs\fmodex\include;C:\_dev\openFrameworks\libs\FreeImage\include;C:\_dev\openFrameworks\libs\freetype\include;C:\_dev\openFrameworks\libs\glfw\include;C:\_dev\openFrameworks\libs\glm\include;C:\_dev\openFrameworks\libs\json\include;C:\_dev\openFrameworks\libs\libpng;C:\_dev\openFrameworks\libs\openssl\include;C:\_dev\openFrameworks\libs\pixman;C:\_dev\openFrameworks\libs\pugixml\include;C:\_dev\openFrameworks\libs\rtAudio\include;C:\_dev\openFrameworks\libs\tess2\include;C:\_dev\openFrameworks\libs\uriparser\include;C:\_dev\openFrameworks\libs\utf8\include;C:\_dev\openFrameworks\libs\videoInput\include;C:\_dev\openFrameworks\libs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <ObjectFileName>$(IntDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff"))</ObjectFileName>
+      <AdditionalIncludeDirectories>C:\_dev\openFrameworks\libs\openFrameworks\;C:\_dev\openFrameworks\libs\openFrameworks\3d;C:\_dev\openFrameworks\libs\openFrameworks\app;C:\_dev\openFrameworks\libs\openFrameworks\communication;C:\_dev\openFrameworks\libs\openFrameworks\events;C:\_dev\openFrameworks\libs\openFrameworks\gl;C:\_dev\openFrameworks\libs\openFrameworks\gl\shaders;C:\_dev\openFrameworks\libs\openFrameworks\graphics;C:\_dev\openFrameworks\libs\openFrameworks\math;C:\_dev\openFrameworks\libs\openFrameworks\sound;C:\_dev\openFrameworks\libs\openFrameworks\types;C:\_dev\openFrameworks\libs\openFrameworks\utils;C:\_dev\openFrameworks\libs\openFrameworks\video;C:\_dev\openFrameworks\libs\glew\include;C:\_dev\openFrameworks\libs\boost\include;C:\_dev\openFrameworks\libs\cairo\include\cairo;C:\_dev\openFrameworks\libs\curl\include;C:\_dev\openFrameworks\libs\fmodex\include;C:\_dev\openFrameworks\libs\FreeImage\include;C:\_dev\openFrameworks\libs\freetype\include;C:\_dev\openFrameworks\libs\glfw\include;C:\_dev\openFrameworks\libs\glm\include;C:\_dev\openFrameworks\libs\json\include;C:\_dev\openFrameworks\libs\libpng;C:\_dev\openFrameworks\libs\openssl\include;C:\_dev\openFrameworks\libs\pixman;C:\_dev\openFrameworks\libs\pugixml\include;C:\_dev\openFrameworks\libs\rtAudio\include;C:\_dev\openFrameworks\libs\tess2\include;C:\_dev\openFrameworks\libs\uriparser\include;C:\_dev\openFrameworks\libs\utf8\include;C:\_dev\openFrameworks\libs\videoInput\include;C:\_dev\openFrameworks\libs\zlib;C:\_dev\openFrameworks\apps\myApps\ProjectTemplate\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -112,6 +111,7 @@
       <AdditionalLibraryDirectories>C:\_dev\openFrameworks\libs\openFrameworksCompiled\lib\vs\Win32;C:\_dev\openFrameworks\libs\boost\lib\vs\Win32;C:\_dev\openFrameworks\libs\cairo\lib\vs\Win32;C:\_dev\openFrameworks\libs\curl\lib\vs\Win32;C:\_dev\openFrameworks\libs\fmodex\lib\vs\Win32;C:\_dev\openFrameworks\libs\FreeImage\lib\vs\Win32;C:\_dev\openFrameworks\libs\freetype\lib\vs\Win32;C:\_dev\openFrameworks\libs\glew\lib\vs\Win32;C:\_dev\openFrameworks\libs\glfw\lib\vs\Win32;C:\_dev\openFrameworks\libs\openssl\lib\vs\Win32;C:\_dev\openFrameworks\libs\pugixml\lib\vs\Win32;C:\_dev\openFrameworks\libs\rtAudio\lib\vs\Win32;C:\_dev\openFrameworks\libs\uriparser\lib\vs\Win32;C:\_dev\openFrameworks\libs\videoInput\lib\vs\Win32;C:\_dev\openFrameworks\libs\tess2\lib\vs\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>openFrameworksLib_debug.lib;cairo-static.lib;pixman-1.lib;libpng.lib;zlib.lib;msimg32.lib;OpenGL32.lib;GLu32.lib;kernel32.lib;setupapi.lib;Vfw32.lib;comctl32.lib;rtAudio.lib;videoInput.lib;libfreetype.lib;FreeImage.lib;dsound.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;glew32s.lib;fmodex_vc.lib;glu32.lib;libssl.lib;libcrypto.lib;crypt32.lib;libcurl.lib;uriparser.lib;pugixml.lib;Ws2_32.lib;tess2.lib;glfw3.lib;winmm.lib;odbc32.lib;odbccp32.lib;wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <GenerateMapFile>true</GenerateMapFile>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>del "..\Application\bin\*.pdb" 
@@ -119,9 +119,8 @@ xcopy /Y "$(OutDir)*.*" "..\Application\bin"</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>del "$(OutDir)*.pdb"
-del "$(IntDir)*.pdb"
-del "$(IntDir)*.idb"
-del "$(IntDir)*.obj"</Command>
+rd /s /q "obj\$(Configuration)\"
+</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -150,7 +149,7 @@ del "$(IntDir)*.obj"</Command>
       <PreprocessorDefinitions>WIN32;NDEBUG;CONTENT_EXPORTS;_WINDOWS;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff")).pdb</ProgramDataBaseFileName>
-      <AdditionalIncludeDirectories>C:\_dev\openFrameworks\libs\openFrameworks\;C:\_dev\openFrameworks\libs\openFrameworks\3d;C:\_dev\openFrameworks\libs\openFrameworks\app;C:\_dev\openFrameworks\libs\openFrameworks\communication;C:\_dev\openFrameworks\libs\openFrameworks\events;C:\_dev\openFrameworks\libs\openFrameworks\gl;C:\_dev\openFrameworks\libs\openFrameworks\gl\shaders;C:\_dev\openFrameworks\libs\openFrameworks\graphics;C:\_dev\openFrameworks\libs\openFrameworks\math;C:\_dev\openFrameworks\libs\openFrameworks\sound;C:\_dev\openFrameworks\libs\openFrameworks\types;C:\_dev\openFrameworks\libs\openFrameworks\utils;C:\_dev\openFrameworks\libs\openFrameworks\video;C:\_dev\openFrameworks\libs\glew\include;C:\_dev\openFrameworks\libs\boost\include;C:\_dev\openFrameworks\libs\cairo\include\cairo;C:\_dev\openFrameworks\libs\curl\include;C:\_dev\openFrameworks\libs\fmodex\include;C:\_dev\openFrameworks\libs\FreeImage\include;C:\_dev\openFrameworks\libs\freetype\include;C:\_dev\openFrameworks\libs\glfw\include;C:\_dev\openFrameworks\libs\glm\include;C:\_dev\openFrameworks\libs\json\include;C:\_dev\openFrameworks\libs\libpng;C:\_dev\openFrameworks\libs\openssl\include;C:\_dev\openFrameworks\libs\pixman;C:\_dev\openFrameworks\libs\pugixml\include;C:\_dev\openFrameworks\libs\rtAudio\include;C:\_dev\openFrameworks\libs\tess2\include;C:\_dev\openFrameworks\libs\uriparser\include;C:\_dev\openFrameworks\libs\utf8\include;C:\_dev\openFrameworks\libs\videoInput\include;C:\_dev\openFrameworks\libs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\_dev\openFrameworks\libs\openFrameworks\;C:\_dev\openFrameworks\libs\openFrameworks\3d;C:\_dev\openFrameworks\libs\openFrameworks\app;C:\_dev\openFrameworks\libs\openFrameworks\communication;C:\_dev\openFrameworks\libs\openFrameworks\events;C:\_dev\openFrameworks\libs\openFrameworks\gl;C:\_dev\openFrameworks\libs\openFrameworks\gl\shaders;C:\_dev\openFrameworks\libs\openFrameworks\graphics;C:\_dev\openFrameworks\libs\openFrameworks\math;C:\_dev\openFrameworks\libs\openFrameworks\sound;C:\_dev\openFrameworks\libs\openFrameworks\types;C:\_dev\openFrameworks\libs\openFrameworks\utils;C:\_dev\openFrameworks\libs\openFrameworks\video;C:\_dev\openFrameworks\libs\glew\include;C:\_dev\openFrameworks\libs\boost\include;C:\_dev\openFrameworks\libs\cairo\include\cairo;C:\_dev\openFrameworks\libs\curl\include;C:\_dev\openFrameworks\libs\fmodex\include;C:\_dev\openFrameworks\libs\FreeImage\include;C:\_dev\openFrameworks\libs\freetype\include;C:\_dev\openFrameworks\libs\glfw\include;C:\_dev\openFrameworks\libs\glm\include;C:\_dev\openFrameworks\libs\json\include;C:\_dev\openFrameworks\libs\libpng;C:\_dev\openFrameworks\libs\openssl\include;C:\_dev\openFrameworks\libs\pixman;C:\_dev\openFrameworks\libs\pugixml\include;C:\_dev\openFrameworks\libs\rtAudio\include;C:\_dev\openFrameworks\libs\tess2\include;C:\_dev\openFrameworks\libs\uriparser\include;C:\_dev\openFrameworks\libs\utf8\include;C:\_dev\openFrameworks\libs\videoInput\include;C:\_dev\openFrameworks\libs\zlib;C:\_dev\openFrameworks\apps\myApps\ProjectTemplate\Common;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ObjectFileName>$(IntDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff"))</ObjectFileName>
     </ClCompile>
     <Link>
@@ -161,12 +160,14 @@ del "$(IntDir)*.obj"</Command>
       <ProgramDatabaseFile>$(OutDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff")).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>C:\_dev\openFrameworks\libs\openFrameworksCompiled\lib\vs\Win32;C:\_dev\openFrameworks\libs\boost\lib\vs\Win32;C:\_dev\openFrameworks\libs\cairo\lib\vs\Win32;C:\_dev\openFrameworks\libs\curl\lib\vs\Win32;C:\_dev\openFrameworks\libs\fmodex\lib\vs\Win32;C:\_dev\openFrameworks\libs\FreeImage\lib\vs\Win32;C:\_dev\openFrameworks\libs\freetype\lib\vs\Win32;C:\_dev\openFrameworks\libs\glew\lib\vs\Win32;C:\_dev\openFrameworks\libs\glfw\lib\vs\Win32;C:\_dev\openFrameworks\libs\openssl\lib\vs\Win32;C:\_dev\openFrameworks\libs\pugixml\lib\vs\Win32;C:\_dev\openFrameworks\libs\rtAudio\lib\vs\Win32;C:\_dev\openFrameworks\libs\uriparser\lib\vs\Win32;C:\_dev\openFrameworks\libs\videoInput\lib\vs\Win32;C:\_dev\openFrameworks\libs\tess2\lib\vs\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>openFrameworksLib.lib;cairo-static.lib;pixman-1.lib;libpng.lib;zlib.lib;msimg32.lib;OpenGL32.lib;GLu32.lib;kernel32.lib;setupapi.lib;Vfw32.lib;comctl32.lib;rtAudio.lib;videoInput.lib;libfreetype.lib;FreeImage.lib;dsound.lib;user32.lib;gdi32.lib;winspool.lib;comdlg32.lib;advapi32.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;glew32s.lib;fmodex_vc.lib;glu32.lib;libssl.lib;libcrypto.lib;crypt32.lib;libcurl.lib;uriparser.lib;pugixml.lib;Ws2_32.lib;tess2.lib;glfw3.lib;winmm.lib;odbc32.lib;odbccp32.lib;wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalOptions>/ignore:4099 /ignore:4098 %(AdditionalOptions)</AdditionalOptions>
     </Link>
     <PostBuildEvent>
       <Command>xcopy /Y "$(OutDir)*.*" "..\Application\bin"</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>del "$(IntDir)*.obj"</Command>
+      <Command>del "$(OutDir)*.pdb"
+rd /s /q "obj\$(Configuration)\"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -190,9 +191,11 @@ del "$(IntDir)*.obj"</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Content.h" />
+    <ClInclude Include="ShaderWatcher.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Content.cpp" />
+    <ClCompile Include="ShaderWatcher.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

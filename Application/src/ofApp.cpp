@@ -6,17 +6,17 @@ void ofApp::setup(){
 
 	m_content = loadContentCode();
 	m_content.m_setup(ofGetCurrentWindow());
-
 	m_dllWatcher.lock();
+
+#ifdef _DEBUG
+	m_dllWatcher.setFile(boost::filesystem::path("..\\Content_debug.dll"), 100);
+#else 
 	m_dllWatcher.setFile(boost::filesystem::path("..\\Content.dll"), 100);
+#endif
+
 	m_dllWatcher.registerCallback(std::function<void()>([this]() {onDllWasModified(); }));
 	m_dllWatcher.unlock();
 	m_dllWatcher.startThread();
-
-	ofSetCircleResolution(50);
-	ofBackground(255,255,255);
-
-	ofSetFrameRate(60); // if vertical sync is off, we can go a bit fast... this caps the framerate at 60fps.
 }
 
 //--------------------------------------------------------------
@@ -43,7 +43,12 @@ WindowsContentCode ofApp::loadContentCode(void)
 {
 	WindowsContentCode result = {};
 
+#ifdef _DEBUG
+	CopyFile(L"Content_debug.dll", L"Content_temp.dll", FALSE);
+#else
 	CopyFile(L"Content.dll", L"Content_temp.dll", FALSE);
+#endif
+
 	result.m_dll = LoadLibraryA("Content_temp.dll");
 	if (result.m_dll)
 	{

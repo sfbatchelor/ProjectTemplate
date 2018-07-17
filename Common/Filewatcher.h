@@ -68,7 +68,4 @@ public:
 	{
 		m_changedCallback = callback;
 	}
-
-
-
 };
