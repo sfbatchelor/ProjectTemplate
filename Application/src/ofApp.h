@@ -6,7 +6,21 @@
 struct WindowsContentCode
 {
 	HMODULE m_dll;
-	Content_Update_And_Render *m_updateAndRender;
+	Content_Setup* m_setup;
+	Content_Update* m_update;
+	Content_Render* m_render;
+	Content_Exit* m_exit;
+	Content_Key_Pressed* m_keyPressed;
+	Content_Key_Released* m_keyReleased;
+	Content_Mouse_Moved* m_mouseMoved;
+	Content_Mouse_Dragged* m_mouseDragged;
+	Content_Mouse_Pressed* m_mousePressed;
+	Content_Mouse_Released* m_mouseReleased;
+	Content_Mouse_Entered* m_mouseEntered;
+	Content_Mouse_Exited* m_mouseExited;
+	Content_Window_Resized* m_windowResized;
+	Content_Drag_Event* m_dragEvent;
+	Content_Got_Message* m_gotMessage;
 	bool m_isValid;
 };
 
@@ -16,6 +30,7 @@ class ofApp : public ofBaseApp{
 		void setup();
 		void update();
 		void draw();
+		void exit();
 
 
 		WindowsContentCode loadContentCode(void );
