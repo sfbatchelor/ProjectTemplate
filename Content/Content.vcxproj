@@ -110,6 +110,7 @@
       <ProgramDatabaseFile>$(OutDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff")).pdb</ProgramDatabaseFile>
       <AdditionalLibraryDirectories>C:\_dev\openFrameworks\libs\openFrameworksCompiled\lib\vs\Win32;C:\_dev\openFrameworks\libs\boost\lib\vs\Win32;C:\_dev\openFrameworks\libs\cairo\lib\vs\Win32;C:\_dev\openFrameworks\libs\curl\lib\vs\Win32;C:\_dev\openFrameworks\libs\fmodex\lib\vs\Win32;C:\_dev\openFrameworks\libs\FreeImage\lib\vs\Win32;C:\_dev\openFrameworks\libs\freetype\lib\vs\Win32;C:\_dev\openFrameworks\libs\glew\lib\vs\Win32;C:\_dev\openFrameworks\libs\glfw\lib\vs\Win32;C:\_dev\openFrameworks\libs\openssl\lib\vs\Win32;C:\_dev\openFrameworks\libs\pugixml\lib\vs\Win32;C:\_dev\openFrameworks\libs\rtAudio\lib\vs\Win32;C:\_dev\openFrameworks\libs\uriparser\lib\vs\Win32;C:\_dev\openFrameworks\libs\videoInput\lib\vs\Win32;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>openFrameworksLib_debug.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <GenerateMapFile>true</GenerateMapFile>
     </Link>
     <PostBuildEvent>
       <Command>del "..\Application\bin\*.pdb" 
@@ -181,13 +182,9 @@ xcopy /Y "$(OutDir)*.*" "..\Application\bin"</Command>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Content.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Content.cpp" />
-    <ClCompile Include="dllmain.cpp" />
-    <ClCompile Include="stdafx.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

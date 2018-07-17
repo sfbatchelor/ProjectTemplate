@@ -1,30 +1,54 @@
 #include "ofApp.h"
 #include "Windows.h"
-#include "Content.h"
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-
-	LoadLibraryA("Content.dll");
-
-
 
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
 
-	if(Content::respond())
-		ofLog(OF_LOG_NOTICE, string("Nice"));
-	else 
-		ofLog(OF_LOG_WARNING, string("BAD"));
+	//if(Content::respond())
+	//	ofLog(OF_LOG_NOTICE, string("Nice"));
+	//else 
+	//	ofLog(OF_LOG_WARNING, string("BAD"));
 
+	m_content = loadContentCode();
+	m_content.m_updateAndRender();
+	unloadContentCode(&m_content);
 
-	LoadLibraryA("Content.dll");
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+
+}
+
+WindowsContentCode ofApp::loadContentCode(void)
+{
+	WindowsContentCode result = {};
+	result.m_dll = LoadLibraryA("Content.dll");
+	if (result.m_dll)
+	{
+		result.m_updateAndRender = (Content_Update_And_Render*)
+			GetProcAddress(result.m_dll, "ContentUpdateAndRender");
+		result.m_isValid = (result.m_updateAndRender);
+	}
+	if (!result.m_isValid)
+	{
+		result.m_updateAndRender = ContentUpdateAndRenderStub;
+	}
+
+	return result;
+}
+
+void ofApp::unloadContentCode(WindowsContentCode *contentCode)
+{
+	if (contentCode->m_dll)
+		FreeLibrary(contentCode->m_dll);
+	contentCode->m_isValid = false;
+	contentCode->m_updateAndRender = ContentUpdateAndRenderStub;
 
 }
 
