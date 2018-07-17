@@ -103,6 +103,7 @@
       </AdditionalOptions>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff")).pdb</ProgramDataBaseFileName>
       <AdditionalIncludeDirectories>C:\_dev\openFrameworks\libs\openFrameworks\;C:\_dev\openFrameworks\libs\openFrameworks\3d;C:\_dev\openFrameworks\libs\openFrameworks\app;C:\_dev\openFrameworks\libs\openFrameworks\communication;C:\_dev\openFrameworks\libs\openFrameworks\events;C:\_dev\openFrameworks\libs\openFrameworks\gl;C:\_dev\openFrameworks\libs\openFrameworks\gl\shaders;C:\_dev\openFrameworks\libs\openFrameworks\graphics;C:\_dev\openFrameworks\libs\openFrameworks\math;C:\_dev\openFrameworks\libs\openFrameworks\sound;C:\_dev\openFrameworks\libs\openFrameworks\types;C:\_dev\openFrameworks\libs\openFrameworks\utils;C:\_dev\openFrameworks\libs\openFrameworks\video;C:\_dev\openFrameworks\libs\glew\include;C:\_dev\openFrameworks\libs\boost\include;C:\_dev\openFrameworks\libs\cairo\include\cairo;C:\_dev\openFrameworks\libs\curl\include;C:\_dev\openFrameworks\libs\fmodex\include;C:\_dev\openFrameworks\libs\FreeImage\include;C:\_dev\openFrameworks\libs\freetype\include;C:\_dev\openFrameworks\libs\glfw\include;C:\_dev\openFrameworks\libs\glm\include;C:\_dev\openFrameworks\libs\json\include;C:\_dev\openFrameworks\libs\libpng;C:\_dev\openFrameworks\libs\openssl\include;C:\_dev\openFrameworks\libs\pixman;C:\_dev\openFrameworks\libs\pugixml\include;C:\_dev\openFrameworks\libs\rtAudio\include;C:\_dev\openFrameworks\libs\tess2\include;C:\_dev\openFrameworks\libs\uriparser\include;C:\_dev\openFrameworks\libs\utf8\include;C:\_dev\openFrameworks\libs\videoInput\include;C:\_dev\openFrameworks\libs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff"))</ObjectFileName>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -117,7 +118,10 @@
 xcopy /Y "$(OutDir)*.*" "..\Application\bin"</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>del "$(OutDir)*.pdb"</Command>
+      <Command>del "$(OutDir)*.pdb"
+del "$(IntDir)*.pdb"
+del "$(IntDir)*.idb"
+del "$(IntDir)*.obj"</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -147,6 +151,7 @@ xcopy /Y "$(OutDir)*.*" "..\Application\bin"</Command>
       <ConformanceMode>true</ConformanceMode>
       <ProgramDataBaseFileName>$(IntDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff")).pdb</ProgramDataBaseFileName>
       <AdditionalIncludeDirectories>C:\_dev\openFrameworks\libs\openFrameworks\;C:\_dev\openFrameworks\libs\openFrameworks\3d;C:\_dev\openFrameworks\libs\openFrameworks\app;C:\_dev\openFrameworks\libs\openFrameworks\communication;C:\_dev\openFrameworks\libs\openFrameworks\events;C:\_dev\openFrameworks\libs\openFrameworks\gl;C:\_dev\openFrameworks\libs\openFrameworks\gl\shaders;C:\_dev\openFrameworks\libs\openFrameworks\graphics;C:\_dev\openFrameworks\libs\openFrameworks\math;C:\_dev\openFrameworks\libs\openFrameworks\sound;C:\_dev\openFrameworks\libs\openFrameworks\types;C:\_dev\openFrameworks\libs\openFrameworks\utils;C:\_dev\openFrameworks\libs\openFrameworks\video;C:\_dev\openFrameworks\libs\glew\include;C:\_dev\openFrameworks\libs\boost\include;C:\_dev\openFrameworks\libs\cairo\include\cairo;C:\_dev\openFrameworks\libs\curl\include;C:\_dev\openFrameworks\libs\fmodex\include;C:\_dev\openFrameworks\libs\FreeImage\include;C:\_dev\openFrameworks\libs\freetype\include;C:\_dev\openFrameworks\libs\glfw\include;C:\_dev\openFrameworks\libs\glm\include;C:\_dev\openFrameworks\libs\json\include;C:\_dev\openFrameworks\libs\libpng;C:\_dev\openFrameworks\libs\openssl\include;C:\_dev\openFrameworks\libs\pixman;C:\_dev\openFrameworks\libs\pugixml\include;C:\_dev\openFrameworks\libs\rtAudio\include;C:\_dev\openFrameworks\libs\tess2\include;C:\_dev\openFrameworks\libs\uriparser\include;C:\_dev\openFrameworks\libs\utf8\include;C:\_dev\openFrameworks\libs\videoInput\include;C:\_dev\openFrameworks\libs\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <ObjectFileName>$(IntDir)$(TargetName)_$([System.DateTime]::Now.toString("MMddhhmmssfff"))</ObjectFileName>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -160,6 +165,9 @@ xcopy /Y "$(OutDir)*.*" "..\Application\bin"</Command>
     <PostBuildEvent>
       <Command>xcopy /Y "$(OutDir)*.*" "..\Application\bin"</Command>
     </PostBuildEvent>
+    <PreBuildEvent>
+      <Command>del "$(IntDir)*.obj"</Command>
+    </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>

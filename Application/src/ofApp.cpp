@@ -5,7 +5,7 @@
 void ofApp::setup(){
 
 	m_content = loadContentCode();
-	m_content.m_setup();
+	m_content.m_setup(ofGetCurrentWindow());
 
 	m_dllWatcher.lock();
 	m_dllWatcher.setFile(boost::filesystem::path("..\\Content.dll"), 100);
@@ -15,19 +15,22 @@ void ofApp::setup(){
 
 	ofSetCircleResolution(50);
 	ofBackground(255,255,255);
-	ofSetWindowTitle("graphics example");
 
 	ofSetFrameRate(60); // if vertical sync is off, we can go a bit fast... this caps the framerate at 60fps.
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
+	m_dllWatcher.lock();
 	m_content.m_update();
+	m_dllWatcher.unlock();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
+	m_dllWatcher.lock();
 	m_content.m_render(ofGetCurrentWindow()->renderer());
+	m_dllWatcher.unlock();
 }
 
 void ofApp::exit()
@@ -133,63 +136,85 @@ void ofApp::onDllWasModified()
 	m_content = loadContentCode();
 	m_dllWatcher.unlock();
 
-	m_content.m_setup();
+	m_content.m_setup(ofGetCurrentWindow());
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
+	m_dllWatcher.lock();
 	m_content.m_keyPressed(key);
+	m_dllWatcher.unlock();
 }
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key){
+	m_dllWatcher.lock();
 	m_content.m_keyReleased(key);
+	m_dllWatcher.unlock();
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseMoved(int x, int y ){
+	m_dllWatcher.lock();
 	m_content.m_mouseMoved(x, y);
+	m_dllWatcher.unlock();
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseDragged(int x, int y, int button){
+	m_dllWatcher.lock();
 	m_content.m_mouseDragged(x, y, button);
+	m_dllWatcher.unlock();
 
 }
 
 //--------------------------------------------------------------
 void ofApp::mousePressed(int x, int y, int button){
+	m_dllWatcher.lock();
 	m_content.m_mousePressed(x, y, button);
+	m_dllWatcher.unlock();
 
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
+	m_dllWatcher.lock();
 	m_content.m_mouseReleased(x, y, button);
+	m_dllWatcher.unlock();
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseEntered(int x, int y){
+	m_dllWatcher.lock();
 	m_content.m_mouseEntered(x, y);
+	m_dllWatcher.unlock();
 }
 
 //--------------------------------------------------------------
 void ofApp::mouseExited(int x, int y){
+	m_dllWatcher.lock();
 	m_content.m_mouseExited(x, y);
+	m_dllWatcher.unlock();
 
 }
 
 //--------------------------------------------------------------
 void ofApp::windowResized(int w, int h){
+	m_dllWatcher.lock();
 	m_content.m_windowResized(w, h);
+	m_dllWatcher.unlock();
 }
 
 //--------------------------------------------------------------
 void ofApp::gotMessage(ofMessage msg){
+	m_dllWatcher.lock();
 	m_content.m_gotMessage(msg);
+	m_dllWatcher.unlock();
 }
 
 //--------------------------------------------------------------
 void ofApp::dragEvent(ofDragInfo dragInfo){ 
+	m_dllWatcher.lock();
 	m_content.m_dragEvent(dragInfo);
+	m_dllWatcher.unlock();
 }

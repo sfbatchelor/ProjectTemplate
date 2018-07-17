@@ -8,10 +8,9 @@
 
 #include "ofMain.h"
 
-
 //--------------------------------------------------------------
 //setup
-#define CONTENT_SETUP(name) void name()
+#define CONTENT_SETUP(name) void name(std::shared_ptr<ofAppBaseWindow> window)
 typedef CONTENT_SETUP(Content_Setup);
 inline CONTENT_SETUP(ContentSetupStub)
 {
