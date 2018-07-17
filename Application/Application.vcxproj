@@ -210,9 +210,6 @@ C:\_dev\openFrameworks\addons\ofxGui\src;%(AdditionalIncludeDirectories)</Additi
     <ProjectReference Include="$(OF_ROOT)\libs\openFrameworksCompiled\project\vs\openframeworksLib.vcxproj">
       <Project>{5837595d-aca9-485c-8e76-729040ce4b0b}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\Content\Content.vcxproj">
-      <Project>{3ca235c0-1d71-4285-8a6c-7cda585f206a}</Project>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc">

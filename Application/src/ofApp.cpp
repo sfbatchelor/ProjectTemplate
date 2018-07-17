@@ -4,20 +4,18 @@
 //--------------------------------------------------------------
 void ofApp::setup(){
 
+	m_content = loadContentCode();
+	m_dllWatcher.lock();
+	m_dllWatcher.setFile(boost::filesystem::path("..\\Content.dll"), 100);
+	m_dllWatcher.registerCallback(std::function<void()>([this]() {onDllWasModified(); }));
+	m_dllWatcher.unlock();
+	m_dllWatcher.startThread();
+
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-
-	//if(Content::respond())
-	//	ofLog(OF_LOG_NOTICE, string("Nice"));
-	//else 
-	//	ofLog(OF_LOG_WARNING, string("BAD"));
-
-	m_content = loadContentCode();
 	m_content.m_updateAndRender();
-	unloadContentCode(&m_content);
-
 }
 
 //--------------------------------------------------------------
@@ -28,7 +26,9 @@ void ofApp::draw(){
 WindowsContentCode ofApp::loadContentCode(void)
 {
 	WindowsContentCode result = {};
-	result.m_dll = LoadLibraryA("Content.dll");
+
+	CopyFile(L"Content.dll", L"Content_temp.dll", FALSE);
+	result.m_dll = LoadLibraryA("Content_temp.dll");
 	if (result.m_dll)
 	{
 		result.m_updateAndRender = (Content_Update_And_Render*)
@@ -50,6 +50,14 @@ void ofApp::unloadContentCode(WindowsContentCode *contentCode)
 	contentCode->m_isValid = false;
 	contentCode->m_updateAndRender = ContentUpdateAndRenderStub;
 
+}
+
+void ofApp::onDllWasModified()
+{
+	m_dllWatcher.lock();
+	unloadContentCode(&m_content);
+	m_content = loadContentCode();
+	m_dllWatcher.unlock();
 }
 
 //--------------------------------------------------------------

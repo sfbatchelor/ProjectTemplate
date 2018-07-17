@@ -1,6 +1,7 @@
 #pragma once
 #include "ofMain.h"
 #include "Content.h"
+#include "filewatcher.h"
 
 struct WindowsContentCode
 {
@@ -19,6 +20,7 @@ class ofApp : public ofBaseApp{
 
 		WindowsContentCode loadContentCode(void );
 		void unloadContentCode(WindowsContentCode *contentCode);
+		void onDllWasModified();
 
 		void keyPressed(int key);
 		void keyReleased(int key);
@@ -35,5 +37,6 @@ class ofApp : public ofBaseApp{
 private:
 
 	WindowsContentCode m_content;
+	FileWatcher m_dllWatcher;
 		
 };
